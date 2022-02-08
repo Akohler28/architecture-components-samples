@@ -70,6 +70,7 @@ public class DataGenerator {
                 comment.setText(COMMENTS[i] + " for " + product.getName());
                 comment.setPostedAt(new Date(System.currentTimeMillis()
                         - TimeUnit.DAYS.toMillis(commentsNumber - i) + TimeUnit.HOURS.toMillis(i)));
+                comment.setRating(1);
                 comments.add(comment);
             }
         }

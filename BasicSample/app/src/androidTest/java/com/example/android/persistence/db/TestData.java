@@ -20,9 +20,9 @@ public class TestData {
     static final List<ProductEntity> PRODUCTS = Arrays.asList(PRODUCT_ENTITY, PRODUCT_ENTITY2);
 
     static final CommentEntity COMMENT_ENTITY = new CommentEntity(1, PRODUCT_ENTITY.getId(),
-            "desc", new Date());
+            "desc", new Date(), 1);
     static final CommentEntity COMMENT_ENTITY2 = new CommentEntity(2,
-            PRODUCT_ENTITY2.getId(), "desc2", new Date());
+            PRODUCT_ENTITY2.getId(), "desc2", new Date(), 2);
 
     static final List<CommentEntity> COMMENTS = Arrays.asList(COMMENT_ENTITY, COMMENT_ENTITY2);
 

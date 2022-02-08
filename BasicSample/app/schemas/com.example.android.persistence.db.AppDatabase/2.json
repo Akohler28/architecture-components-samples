@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "3e1095fcd74edb0edc506f32734f3379",
+    "identityHash": "8870f46505da4abd97a468e3b021a862",
     "entities": [
       {
         "tableName": "products",
@@ -85,7 +85,7 @@
       },
       {
         "tableName": "comments",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `productId` INTEGER NOT NULL, `text` TEXT, `postedAt` INTEGER, FOREIGN KEY(`productId`) REFERENCES `products`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `productId` INTEGER NOT NULL, `text` TEXT, `postedAt` INTEGER, `rating` INTEGER NOT NULL, FOREIGN KEY(`productId`) REFERENCES `products`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "id",
@@ -110,6 +110,12 @@
             "columnName": "postedAt",
             "affinity": "INTEGER",
             "notNull": false
+          },
+          {
+            "fieldPath": "rating",
+            "columnName": "rating",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -125,6 +131,7 @@
             "columnNames": [
               "productId"
             ],
+            "orders": [],
             "createSql": "CREATE INDEX IF NOT EXISTS `index_comments_productId` ON `${TABLE_NAME}` (`productId`)"
           }
         ],
@@ -146,7 +153,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3e1095fcd74edb0edc506f32734f3379')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8870f46505da4abd97a468e3b021a862')"
     ]
   }
 }

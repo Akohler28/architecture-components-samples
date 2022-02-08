@@ -39,6 +39,8 @@ public class CommentEntity implements Comment {
     private int productId;
     private String text;
     private Date postedAt;
+    private int rating;
+
 
     @Override
     public int getId() {
@@ -72,6 +74,12 @@ public class CommentEntity implements Comment {
         return postedAt;
     }
 
+    // Added rating
+    @Override
+    public int getRating() { return rating; }
+
+    public void setRating(int rating) { this.rating = rating; }
+
     public void setPostedAt(Date postedAt) {
         this.postedAt = postedAt;
     }
@@ -80,10 +88,11 @@ public class CommentEntity implements Comment {
     }
 
     @Ignore
-    public CommentEntity(int id, int productId, String text, Date postedAt) {
+    public CommentEntity(int id, int productId, String text, Date postedAt, int rating) {
         this.id = id;
         this.productId = productId;
         this.text = text;
         this.postedAt = postedAt;
+        this.rating = rating;
     }
 }

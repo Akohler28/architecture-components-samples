@@ -23,4 +23,5 @@ public interface Comment {
     int getProductId();
     String getText();
     Date getPostedAt();
+    int getRating();
 }
