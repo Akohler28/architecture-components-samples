@@ -41,10 +41,15 @@
                       android:layout_height="wrap_content"
                       android:layout_margin="@dimen/comment_padding"
                       android:text="@{comment.text}"/>
-            <TextView android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/comment_padding"
-                android:text="@{comment.rating}"/>
+
         </RelativeLayout>
+        <TextView android:layout_width="wrap_content"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/comment_padding"
+            android:text="@{String.valueOf(comment.rating)}"/>
+
+
+
     </androidx.cardview.widget.CardView>
 </layout>
